@@ -1,6 +1,11 @@
 var keys = [20];
-var data = [50];
-var j;
+var data = [16];
+var data1 = [4];
+var data2 = [4];
+var data3 = [4];
+var data4 = [4];
+
+var j = 0;
 function setup() {
   // uncomment this line to make the canvas the full size of the window
   createCanvas(800, 800);
@@ -32,9 +37,10 @@ thirdrow();
 
 fourthrow();
 
-print(data[j]);
+//append(data, keyTyped());
+//print(data);
+print(conc);
 
-  
 }
 
 /*  Useless piece of shit
@@ -86,7 +92,7 @@ function firstrow() {
   strokeWeight(2);
   var i = 0;
   while((keys[i] == i+1) && (keys[i] < 5)){
-  data[j]=keys[i];
+  data1[j]=keys[i];
   rect(i*100,0,100,100);
  // print(data[j]);
   i++;
@@ -101,7 +107,8 @@ function secondrow() {
   strokeWeight(2);
   var i = 4;
   while((keys[i] == i+1) && (keys[i] < 9)){
-  data[j]=keys[i];
+  //data[j]=keys[i];
+  data2[j]=keys[i];
   rect((i-4)*100,100,100,100);
   i++;
   j++;
@@ -113,7 +120,8 @@ function thirdrow() {
   strokeWeight(2);
   var i = 8;
   while((keys[i] == i+1) && (keys[i] < 13)){
-  data[j]=keys[i];
+ // data[j]=keys[i];
+  data3[j]=keys[i];
   rect((i-8)*100,200,100,100);
   i++;
   j++;
@@ -125,7 +133,8 @@ function fourthrow() {
   strokeWeight(2);
   var i = 12;
   while((keys[i] == i+1) && (keys[i] < 17)){
-  data[j]=keys[i];
+  //data[j]=keys[i];
+  data4[j]=keys[i];
   rect((i-12)*100,300,100,100);
   i++;
   j++;
@@ -152,6 +161,9 @@ function splbar(){
   }
 }
 
+function conc() {
+  append(data,data1,data2,data3,data4);
+}
 
 
 
