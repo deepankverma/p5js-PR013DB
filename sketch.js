@@ -1,6 +1,6 @@
 var keys = [20];
 var data = [50];
-var j= 0;
+var j;
 function setup() {
   // uncomment this line to make the canvas the full size of the window
   createCanvas(800, 800);
@@ -32,7 +32,7 @@ thirdrow();
 
 fourthrow();
 
-//print(data);
+print(data[j]);
 
   
 }
@@ -88,7 +88,7 @@ function firstrow() {
   while((keys[i] == i+1) && (keys[i] < 5)){
   data[j]=keys[i];
   rect(i*100,0,100,100);
-  print(data[j]);
+ // print(data[j]);
   i++;
   j++;
   
