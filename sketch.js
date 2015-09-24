@@ -1,20 +1,13 @@
-var keys = [20];
-var data = [16];
-var data1 = [4];
-var data2 = [4];
-var data3 = [4];
-var data4 = [4];
-
+var keys = new Array(20);
+var data = new Array(20);
 var j = 0;
 function setup() {
-  // uncomment this line to make the canvas the full size of the window
+
   createCanvas(800, 800);
   smooth(8);
-/* firstrow();
-  secondrow();
-  thirdrow();
-  fourthrow(); */ // Doesn't work from inside of setup.
-//  print(data)    //prints only one time, that too 50.
+
+
+
 }
 
 function draw() {
@@ -27,41 +20,21 @@ outline(100);
 outline(200);
 outline(300);
 splbar();               // to create special buttons
-//if (keyTyped=='1'||keyTyped=='2'||keyTyped=='3'||keyTyped=='4'){
+
 firstrow();
-//}
-//if (keyTyped=='q'||keyTyped=='w'||keyTyped=='e'||keyTyped=='r'){
+
 secondrow();
-//}
+
 thirdrow();
 
 fourthrow();
 
-//append(data, keyTyped());
-//print(data);
-print(conc);
 
+printresult();
+noLoop();
 }
 
-/*  Useless piece of shit
-if (keys[0] == 1) rect(0,0,200,200);
-if (keys[1] == 2) rect(200,0,200,200);
-if (keys[2] == 3) rect(400,0,200,200);
-if (keys[3] == 4) rect(600,0,200,200);
-if (keys[4] == 5) rect(0,200,200,200);
-if (keys[5] == 6) rect(200,200,200,200);
-if (keys[6] == 7) rect(400,200,200,200);
-if (keys[7] == 8) rect(600,200,200,200);
-if (keys[8] == 9) rect(0,400,200,200);
-if (keys[9] == 10) rect(200,400,200,200);
-if (keys[10] == 11) rect(400,400,200,200);
-if (keys[11] == 12) rect(600,400,200,200);
-if (keys[12] == 13) rect(0,600,200,200);
-if (keys[13] == 14) rect(200,600,200,200);
-if (keys[14] == 15) rect(400,600,200,200);
-if (keys[15] == 16) rect(600,600,200,200);
-*/
-//}
+
 
 function keyTyped() {                    // Use keyTyped instead of keyPressed
   if (key == '1') keys[0] = 1;
@@ -84,7 +57,7 @@ function keyTyped() {                    // Use keyTyped instead of keyPressed
   if (key == '8') keys[17] = 18;
   if (key == '9') keys[18] = 19;
   if (key == '6') keys[19] = 20;
-  
+  loop();
 }
 
 function firstrow() {
@@ -92,7 +65,7 @@ function firstrow() {
   strokeWeight(2);
   var i = 0;
   while((keys[i] == i+1) && (keys[i] < 5)){
-  data1[j]=keys[i];
+  data[j]=keys[i];
   rect(i*100,0,100,100);
  // print(data[j]);
   i++;
@@ -107,8 +80,7 @@ function secondrow() {
   strokeWeight(2);
   var i = 4;
   while((keys[i] == i+1) && (keys[i] < 9)){
-  //data[j]=keys[i];
-  data2[j]=keys[i];
+  data[j]=keys[i];
   rect((i-4)*100,100,100,100);
   i++;
   j++;
@@ -120,11 +92,12 @@ function thirdrow() {
   strokeWeight(2);
   var i = 8;
   while((keys[i] == i+1) && (keys[i] < 13)){
- // data[j]=keys[i];
-  data3[j]=keys[i];
+  
+   data[j]=keys[i];
   rect((i-8)*100,200,100,100);
   i++;
   j++;
+  
   }
 }
 
@@ -133,8 +106,7 @@ function fourthrow() {
   strokeWeight(2);
   var i = 12;
   while((keys[i] == i+1) && (keys[i] < 17)){
-  //data[j]=keys[i];
-  data4[j]=keys[i];
+  data[j]=keys[i];
   rect((i-12)*100,300,100,100);
   i++;
   j++;
@@ -161,17 +133,6 @@ function splbar(){
   }
 }
 
-function conc() {
-  append(data,data1,data2,data3,data4);
+function printresult(){
+  console.log(data);
 }
-
-
-
-
-
-
-
-
-
-
-
