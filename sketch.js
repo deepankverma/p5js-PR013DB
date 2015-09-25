@@ -1,6 +1,6 @@
 var keys = new Array(20);
 var data = new Array(20);
-var j = 0;
+
 function setup() {
 
   createCanvas(800, 800);
@@ -13,6 +13,7 @@ function setup() {
 function draw() {
   
 background(50);
+
 
 
 outline(0);             // to create just the outline.
@@ -31,6 +32,8 @@ fourthrow();
 
 
 printresult();
+
+
 noLoop();
 }
 
@@ -56,34 +59,42 @@ function keyTyped() {                    // Use keyTyped instead of keyPressed
   if (key == '7') keys[16] = 17;
   if (key == '8') keys[17] = 18;
   if (key == '9') keys[18] = 19;
-  if (key == '6') keys[19] = 20;
   loop();
+  if (key == '6') {
+  save(keys, 'my.txt')
+  }
+  
 }
 
 function firstrow() {
   fill (70,137,102);
   strokeWeight(2);
   var i = 0;
+  var j = 0;
   while((keys[i] == i+1) && (keys[i] < 5)){
-  data[j]=keys[i];
+  collect =keys[i];
+  collector(collect);
   rect(i*100,0,100,100);
  // print(data[j]);
   i++;
   j++;
   
-  
 }
+
 }
 
 function secondrow() {
   fill (0,163,136);
   strokeWeight(2);
   var i = 4;
+  var j = 0;
   while((keys[i] == i+1) && (keys[i] < 9)){
-  data[j]=keys[i];
+  collect =keys[i];
+  collector(collect);
   rect((i-4)*100,100,100,100);
   i++;
   j++;
+  
   }
 }
 
@@ -91,9 +102,10 @@ function thirdrow() {
   fill (121,189,143);
   strokeWeight(2);
   var i = 8;
+  var j = 0;
   while((keys[i] == i+1) && (keys[i] < 13)){
-  
-   data[j]=keys[i];
+  collect =keys[i];
+  collector(collect);
   rect((i-8)*100,200,100,100);
   i++;
   j++;
@@ -105,8 +117,10 @@ function fourthrow() {
   fill (190,235,159);
   strokeWeight(2);
   var i = 12;
+  var j = 0;
   while((keys[i] == i+1) && (keys[i] < 17)){
-  data[j]=keys[i];
+  collect =keys[i];
+  collector(collect);
   rect((i-12)*100,300,100,100);
   i++;
   j++;
@@ -132,6 +146,13 @@ function splbar(){
   i++;
   }
 }
+
+function collector(x) {
+  var j;
+  data[j]=x;
+  j++;
+}
+
 
 function printresult(){
   console.log(data);
