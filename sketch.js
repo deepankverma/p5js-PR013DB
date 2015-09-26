@@ -2,6 +2,7 @@ var count = new Array(50);
 var x;
 var y;
 var send;
+//var send2;
 var newcount;
 function setup() {
   createCanvas(800, 800);
@@ -16,7 +17,7 @@ outline(200);
 outline(300);
 splbar();
 //noLoop();
-fill (1,52,64);
+
 hover(x,y,100,100);
 collect(send);
 }
@@ -24,12 +25,10 @@ collect(send);
 function mousePressed() {
 console.log(mouseX);
 console.log(mouseY);
-noLoop();
   if((mouseX <100) && (mouseY <100)){
   x = 0;
   y = 0;
   send = 1;
-  loop();
 }
 
   if((mouseX <200) && (mouseX >100) && (mouseY < 100)){
@@ -65,15 +64,17 @@ function splbar(){
   }
 }
 function hover(x,y){
-  fill (225,59,32);
+  fill (1,52,64);
   rect(x,y,100,100);
 }
 
-function collect(x){
+function collect(send){
   var i = 0;
-  count[i]=x;
- // count.push(x);
+  count[i]=send;
+  //count[1]=send;
+ count.push(send);
   //console.log(count[i]);
   i++;
   console.log(count);
 }
+
