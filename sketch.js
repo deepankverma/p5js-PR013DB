@@ -1,7 +1,8 @@
 var count = new Array(50);
 var x;
 var y;
-var send;
+var send = 0;
+
 //var send2;
 var newcount;
 function setup() {
@@ -10,16 +11,16 @@ function setup() {
 }
 
 function draw()  {
+
 background(50);
 outline(0);             // to create just the outline.
 outline(100);
 outline(200);
 outline(300);
 splbar();
-//noLoop();
-
-hover(x,y,100,100);
 collect(send);
+noLoop();
+hover(x,y,100,100);
 }
 
 function mousePressed() {
@@ -28,18 +29,32 @@ console.log(mouseY);
   if((mouseX <100) && (mouseY <100)){
   x = 0;
   y = 0;
-  send = 1;
+  send = "A";
+  loop();
 }
 
   if((mouseX <200) && (mouseX >100) && (mouseY < 100)){
   x = 100;
   y = 0;
-  send = 2;
+  send = "B";
+  loop();
 }
   
-  if((mouseX < 500) && (mouseX > 400) && (mouseY < 100)){
+  if ((mouseX <300) && (mouseX >200) && (mouseY <100)){
+    x = 200;
+    y = 0;
+    send = "C";
+    loop();
+  }
   
-  save (count,"count.txt");
+  if ((mouseX <400) && (mouseX >300) && (mouseY <100)){
+    x = 300;
+    y = 0;
+    send = "D";
+    loop();
+  }
+  if ((mouseX < 500) && (mouseX > 400) && (mouseY < 100)){
+  save(count,"count.txt");
   
 }
 }
@@ -75,6 +90,7 @@ function collect(send){
  count.push(send);
   //console.log(count[i]);
   i++;
+  //var list = split(count,' ');
   console.log(count);
 }
 
