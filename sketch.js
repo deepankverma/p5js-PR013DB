@@ -53,10 +53,92 @@ console.log(mouseY);
     send = "D";
     loop();
   }
+  
+  if ((mouseX <100) && (mouseY <200) && (mouseY >100)){
+    x = 0;
+    y = 100;
+    send = "E";
+    loop();
+  }
+  
+  if ((mouseX <200) && (mouseX >100) && (mouseY <200) && (mouseY >100)){
+    x = 100;
+    y = 100;
+    send = "F";
+    loop();
+  }
+  
+  if ((mouseX <300) && (mouseX >200) && (mouseY <200) && (mouseY >100)){
+    x = 200;
+    y = 100;
+    send = "G";
+    loop();
+  }
+  
+  if ((mouseX <400) && (mouseX >300) && (mouseY <200) && (mouseY >100)){
+    x = 300;
+    y = 100;
+    send = "H";
+    loop();
+  }
+  
+  if ((mouseX <100) && (mouseY >200) && (mouseY <300)){
+    x = 0;
+    y = 200;
+    send = "I";
+    loop();
+  }
+  
+  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+    x = 100;
+    y = 200;
+    send = "J";
+    loop();
+  }
+  
+  if ((mouseX <300) && (mouseX >200) && (mouseY >200) && (mouseY <300)){
+    x = 200;
+    y = 200;
+    send = "K";
+    loop();
+  }
+  
+  if ((mouseX <400) && (mouseX >300) && (mouseY >200) && (mouseY <300)){
+    x = 300;
+    y = 200;
+    send = "L";
+    loop();
+  }
+  
+  if ((mouseX <100) && (mouseY >300) && (mouseY <400)){
+    x = 0;
+    y = 300;
+    send = "M";
+    loop();
+  }
+  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+    x = 100;
+    y = 300;
+    send = "N";
+    loop();
+  }
+  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+    x = 200;
+    y = 300;
+    send = "0";
+    loop();
+  }
+  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+    x = 300;
+    y = 300;
+    send = "P";
+    loop();
+  }
+  
   if ((mouseX < 500) && (mouseX > 400) && (mouseY < 100)){
   save(count,"count.txt");
-  
 }
+
 }
 
 function outline(y){
