@@ -1,7 +1,7 @@
 var count = new Array(50);
 var x;
 var y;
-var send = 0;
+var send;
 
 //var send2;
 var newcount;
@@ -18,9 +18,10 @@ outline(100);
 outline(200);
 outline(300);
 splbar();
+make(send,x,y);        // sending values so that text can be written over the squares 
 collect(send);
-noLoop();
 hover(x,y,100,100);
+noLoop();              // Drawing only single time
 }
 
 function mousePressed() {
@@ -116,19 +117,19 @@ console.log(mouseY);
     send = "M";
     loop();
   }
-  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+  if ((mouseX <200) && (mouseX >100) && (mouseY >300) && (mouseY <400)){
     x = 100;
     y = 300;
     send = "N";
     loop();
   }
-  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+  if ((mouseX <300) && (mouseX >200) && (mouseY >300) && (mouseY <400)){
     x = 200;
     y = 300;
-    send = "0";
+    send = "O";
     loop();
   }
-  if ((mouseX <200) && (mouseX >100) && (mouseY >200) && (mouseY <300)){
+  if ((mouseX <400) && (mouseX >300) && (mouseY >300) && (mouseY <400)){
     x = 300;
     y = 300;
     send = "P";
@@ -161,18 +162,27 @@ function splbar(){
   }
 }
 function hover(x,y){
-  fill (1,52,64);
+  fill (1,52,64,100);
   rect(x,y,100,100);
+  noLoop();
 }
 
 function collect(send){
-  var i = 0;
+  var i;
   count[i]=send;
-  //count[1]=send;
+  
  count.push(send);
-  //console.log(count[i]);
+  
   i++;
-  //var list = split(count,' ');
+  
   console.log(count);
 }
 
+function make(send,x,y){
+ 
+textSize(32);
+textStyle(BOLD);
+fill(255, 255, 255);
+text(send, x+5, y+30);
+
+}
